@@ -24,3 +24,19 @@
 @layer utilities{
   
 }
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(50%);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  
+  animation: slide-in 10s linear infinite alternate both;
+}
