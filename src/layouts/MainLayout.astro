@@ -15,16 +15,16 @@ const { title } = Astro.props;
     <title>{Astro.props.title}</title>
   </head>
   <body class="h-screen bg-gradient-to-b from-[#7BBAFD] via-[#4E9AE3] to-[#20232D] w-full">
-    <header>
+    
       <Header />
-    </header>
+    
 
     <main>
       <slot />
     </main>
 
-    <footer>
+    
       <Footer />
-    </footer>
+    
   </body>
 </html>
