@@ -1,30 +1,79 @@
 ---
 ---
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 
 <div>
-<h1 class="text-7xl font-bold mb-20 text-center text-[#F8F8F8]">Ønsker du mere info?</h1>
+    <h1 class="text-7xl font-bold mb-20 text-center text-[#F8F8F8]">Ønsker du mere info?</h1>
 
-<div class="grid grid-cols-4 gap-10 mb-40">
-    <a href="link_1.html"><img class="w-full ml-10" src="/info_1.png" alt="Billede 1"></a>
-    <a href="link_2.html"><img class="w-full ml-10" src="/info_2.png" alt="Billede 2"></a>
-    <a href="link_3.html"><img class="w-full ml-10" src="/info_3.png" alt="Billede 3"></a>
-    <a href="link_4.html"><img class="w-full ml-10" src="/info_4.png" alt="Billede 4"></a>
+    <!-- Inkluder Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-    <a href="link_5.html"><img class="w-full mr-10" src="/info_5.png" alt="Billede 5"></a>
-    <a href="link_6.html"><img class="w-full mr-10" src="/info_6.png" alt="Billede 6"></a>
-    <a href="link_7.html"><img class="w-full mr-10" src="/info_7.png" alt="Billede 7"></a>
-    <a href="link_8.html"><img class="w-full mr-10" src="/info_8.png" alt="Billede 8"></a>
-</div>
+    <div class="grid grid-cols-4 gap-10 mb-40">
+        <!-- Øverste række - slide ind fra venstre -->
+        <a href="link_1.html">
+            <img class="w-full ml-10 info-img" src="/info_1.png" alt="Billede 1">
+        </a>
+        <a href="link_2.html">
+            <img class="w-full ml-10 info-img" src="/info_2.png" alt="Billede 2">
+        </a>
+        <a href="link_3.html">
+            <img class="w-full ml-10 info-img" src="/info_3.png" alt="Billede 3">
+        </a>
+        <a href="link_4.html">
+            <img class="w-full ml-10 info-img" src="/info_4.png" alt="Billede 4">
+        </a>
 
+        <!-- Nederste række - slide ind fra højre -->
+        <a href="link_5.html">
+            <img class="w-full mr-10 info-img" src="/info_5.png" alt="Billede 5">
+        </a>
+        <a href="link_6.html">
+            <img class="w-full mr-10 info-img" src="/info_6.png" alt="Billede 6">
+        </a>
+        <a href="link_7.html">
+            <img class="w-full mr-10 info-img" src="/info_7.png" alt="Billede 7">
+        </a>
+        <a href="link_8.html">
+            <img class="w-full mr-10 info-img" src="/info_8.png" alt="Billede 8">
+        </a>
+    </div>
 
-
-
-
-  
-
-    <div class="">
+    <div>
         <img class="" src="/skildpade.svg" alt="Billede 1">
     </div>
 </div>
+
+<!-- JavaScript til at tilføje animationer ved scroll -->
+<script>
+    // Funktion til at observere, hvornår billederne er synlige og aktivere animationen
+    function animateOnScroll() {
+        // Find alle billeder med klassen 'info-img'
+        const images = document.querySelectorAll('.info-img');
+        
+        // Skab en observer til at observere billederne, når de er synlige
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tjek om det er et billede fra den øverste række eller nederste række
+                    if (entry.target.src.includes('info_1') || entry.target.src.includes('info_2') || entry.target.src.includes('info_3') || entry.target.src.includes('info_4')) {
+                        // Tilføj animationen for venstre indgang med langsom hastighed
+                        entry.target.classList.add('animate__animated', 'animate__slideInLeft', 'animate__slow');
+                    } else {
+                        // Tilføj animationen for højre indgang med langsom hastighed
+                        entry.target.classList.add('animate__animated', 'animate__slideInRight', 'animate__slow');
+                    }
+                    // Stop observeren for dette element
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 }); // Observer når 50% af elementet er synligt på skærmen
+
+        // Start observeren for alle billeder
+        images.forEach(img => observer.observe(img));
+    }
+
+    // Initialiser scroll animationer når siden er klar
+    document.addEventListener('DOMContentLoaded', animateOnScroll);
+</script>
