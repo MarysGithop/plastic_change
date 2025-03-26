@@ -40,3 +40,8 @@
   
   animation: slide-in 10s linear infinite alternate both;
 }
+
+.animate__flipInX {
+  -webkit-animation: flipInX 2s linear infinite alternate both;
+	        animation: flipInX 5s linear infinite alternate both;
+}
