@@ -51,3 +51,8 @@
   -webkit-animation: bounceIn 10s linear infinite alternate both;
           animation: bounceIn 8s linear infinite alternate both;
 }
+
+.animate__slideInRight {
+  -webkit-animation: slideInRight 20s linear 1 both;
+          animation: slideInRight 20s linear 1 both;
+}
