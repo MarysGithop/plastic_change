@@ -45,3 +45,9 @@
   -webkit-animation: flipInX 2s linear infinite alternate both;
 	        animation: flipInX 5s linear infinite alternate both;
 }
+
+.animate__bounceIn {
+
+  -webkit-animation: bounceIn 10s linear infinite alternate both;
+          animation: bounceIn 8s linear infinite alternate both;
+}
