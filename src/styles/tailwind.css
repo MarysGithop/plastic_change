@@ -56,3 +56,24 @@
   -webkit-animation: slideInRight 20s linear 1 both;
           animation: slideInRight 20s linear 1 both;
 }
+
+.animate__rollIn {
+  -webkit-animation: rollIn 10s ease-in-out infinite alternate both, swim 10s ease-in-out infinite alternate both;
+          animation: rollIn 10s ease-in-out infinite alternate both, swim 10s ease-in-out infinite alternate both;
+}
+
+@keyframes rollIn {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+ 
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
