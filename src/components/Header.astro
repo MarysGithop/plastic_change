@@ -1,31 +1,31 @@
 ---
 import Button from "./Button.astro";
+import Dropdown from "./Dropdown.astro";
 
 ---
-<div x-data="{ showmenu: false }" class=" bg-blue-800 p-4 fixed lg:static w-full bgg-slate-200 z-40 top-0">
-    <div id="navbar" class="flex flex-row justify-between">
+<div x-data="{ showmenu: false }" class="bg-blue-800 p-4 fixed lg:static w-full z-40 top-0">
+    <div id="navbar" class="flex flex-row justify-between text-white">
         <div id="logo" class="my-auto lg:text-2xl">
             <a href="/">
-                <img src="/icons/logo.png" alt="" class="sm:max-h-[80px] md:max-h-[100px] lg:max-h-[160px]">
+                <img src="/public/logo.png" alt="Logo" class="sm:max-h-[80px] md:max-h-[100px] lg:max-h-[160px]">
             </a>
         </div>
         <!-- Desktop Menu -->
-        <nav id="desktopmenu" class="hidden lg:block content-center sticky top-0  bg-blue-800">
+        <nav id="desktopmenu" class="hidden lg:block content-center sticky top-0 bg-blue-800">
             <ul class="lg:flex flex-row gap-12">
                 <li><a href="/Whatis">Forbrug</a></li>
                 <li><a href="/Problemplast">Problemet</a></li>
                 <li><div class="pr-20"><Button></Button></div></li>
             </ul>
         </nav>
-        <button id="burgermenu" class="lg:hidden text-2xl font-bold text-white uppercase" x-on:click="showmenu = !showmenu"> MENU </button>
+        <!-- Burger Icon -->
+        <button id="burgermenu" class="lg:hidden text-2xl font-bold text-white uppercase" 
+                x-on:click="showmenu = !showmenu">
+            <img src="/public/burger.png" alt="burger">
+        </button>
     </div>
-    <!-- Mobile Menu -->
-    <nav id="mobilmenu" class="hidden lg:hidden flex flex-col content-center justify-content-center pt-4 bg-blue-800" 
-         x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
-        <ul class="flex flex-col text-center gap-10 py-10">
-            <li><a href="/Whatis">Forbrug</a></li>
-            <li><a href="/Problemplast">Problemet</a></li>
-            <li><div class="pr-20"><Button>Giv et bidrag</Button></div></li>
-        </ul>
-    </nav>
+    <!-- Mobile Dropdown Menu -->
+    <div x-show="showmenu" x-transition x-cloak class="lg:hidden bg-blue-800 text-white p-4">
+        <Dropdown />
+    </div>
 </div>

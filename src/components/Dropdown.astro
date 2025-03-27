@@ -1,8 +1,11 @@
 ---
 import Button from "./Button.astro";
 ---
-<section class="md:hidden lg:hidden bg-blue-800 h-10">
-    <div class="flex">
-        <div class="mt-8"><img src="icons/burger.png" alt="burger"></div>
-    </div>
-</section>
+<!-- Mobile Menu -->
+<nav id="mobilmenu" class=" flex flex-col content-center justify-content-center pt-4 bg-blue-800">
+    <ul class="flex flex-col text-center gap-10 py-10">
+        <li><a href="/Whatis">Forbrug</a></li>
+        <li><a href="/Problemplast">Problemet</a></li>
+        <li><div class="pr-20"><Button>Giv et bidrag</Button></div></li>
+    </ul>
+</nav>
