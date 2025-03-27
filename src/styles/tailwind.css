@@ -100,3 +100,8 @@
 .color-change {
   animation: color-change 5s linear infinite;
 }
+
+.animate__rollOut {
+  -webkit-animation: rollOut 10s infinite alternate both;
+          animation: rollOut 10s infinite alternate both;
+}
