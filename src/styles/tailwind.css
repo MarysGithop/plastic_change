@@ -53,8 +53,8 @@
 }
 
 .animate__slideInRight {
-  -webkit-animation: slideInRight 20s linear 1 both;
-          animation: slideInRight 20s linear 1 both;
+  -webkit-animation: slideInRight 20s linear infinite alternate both;
+          animation: slideInRight 40s linear infinite alternate both;
 }
 
 .animate__rollIn {
@@ -97,3 +97,6 @@
   }
 }
 
+.color-change {
+  animation: color-change 5s linear infinite;
+}
