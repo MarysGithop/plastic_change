@@ -15,15 +15,28 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
 
+<div class="progress-bar h-4 fixed w-full bg-gradient-to-r from-[#45d6e3] to-[#113e86] left-0 origin-top-left top-0 right-0"></div>
+
 <MainLayout title="Titel">
-<Header></Header>
-   <Herounit></Herounit>
-   <Whatis></Whatis>
-    <Merinfo></Merinfo>
-     <Problemplast></Problemplast>
-     <Youcando></Youcando>
-     <Scrollyelement></Scrollyelement>
-     <Imgcircle></Imgcircle>
-       <Merchogsome></Merchogsome>
-  <Footer></Footer>
+  <Header />
+  <Herounit />
+  <Whatis />
+  <Merinfo />
+  <Problemplast />
+  <Youcando />
+  <Scrollyelement />
+  <Imgcircle />
+  <Merchogsome />
+  <Footer />
 </MainLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const progressBar = document.querySelector(".progress-bar");
+    window.addEventListener("scroll", () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const percentage = (window.scrollY / maxScroll) * 100;
+      progressBar.style.width = `${percentage}%`;
+    });
+  });
+</script>

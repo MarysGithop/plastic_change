@@ -77,3 +77,23 @@
     transform: translateY(0) rotate(0deg);
   }
 }
+
+.color-change-2x {
+	-webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 5s linear infinite alternate both;
+}
+
+@keyframes color-change-2x {
+  0% {
+    color: rgb(30, 234, 210);
+  }
+ 
+  50% {
+    color: rgb(0, 170, 255);
+  }
+ 
+  100% {
+    color: blue;
+  }
+}
+
